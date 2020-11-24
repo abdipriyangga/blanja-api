@@ -2,8 +2,8 @@ const searchModel = require("../models/search");
 
 module.exports = {
     searchProduct: (req, res) => {
-        const {q} = req.query;
-        const key = "%" + q + "%";
+        const {name} = req.query;
+        const key = "%" + name + "%";
         searchModel
         .searchProduct(key).then((data) => {
           res.json(data);

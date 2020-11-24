@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 const mainRouter = require("./src/routes/index");
 const logger = require("morgan");
-const port = 8000;
+const port = 3000;
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log("drrrrrtttttt");
   })
 
 // add logger with morgan
