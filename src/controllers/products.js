@@ -10,6 +10,21 @@ module.exports = {
                 res.json(err);
             })
     },
+    getProductsById: (req, res) => {
+        const {id} = req.params;
+        productsModels.getProductsById(id)
+        .then((data) => {
+            if(data.length) {
+                res.json(data);
+            } else {
+                res.status(404).json({
+                    msg: "Data Not Found"
+                });
+            }
+        }).catch((err) => {
+            res.json(err);
+        })
+    },
     postProduct: (req,res) => {
         const {body} = req;
         const insertBody = {

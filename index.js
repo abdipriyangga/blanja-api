@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express();
 const mainRouter = require("./src/routes/index");
-
 const logger = require("morgan");
 const port = 8000;
 
 app.listen(port, () => {
-    console.log(`app is running at http://localhost:${port}`)
-})
+    console.log(`Example app listening at http://localhost:${port}`)
+  })
 
 // add logger with morgan
 app.use(logger("dev"));

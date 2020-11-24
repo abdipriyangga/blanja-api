@@ -4,6 +4,7 @@ const productController = require("../controllers/products");
 
 //get all products with endpoint /product
 productsRouter.get("/", productController.getAllProducts);
+productsRouter.get("/:id", productController.getProductsById);
 
 // POST
 productsRouter.post("/", productController.postProduct);
