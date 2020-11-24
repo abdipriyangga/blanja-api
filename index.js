@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const mainRouter = require("./src/routes/index");
 
-const logger = require('morgan');
+const logger = require("morgan");
 const port = 8000;
 
 app.listen(port, () => {
@@ -18,6 +18,6 @@ app.use(express.urlencoded({extended : false}));
 //add parser for raw json
 app.use(express.json());
 
-app.use("/",mainRouter);
+app.use("/", mainRouter);
 
 module.exports = app;
