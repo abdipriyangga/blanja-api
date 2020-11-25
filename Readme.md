@@ -31,7 +31,7 @@ Project ini dibuat untuk proses latihan dalam menerapkan expressJS dan postman u
 
 #### Syarat Menjalankan Program 
 - [NPM](https://www.npmjs.com/)
-    npm install npm@latest -g
+    > npm install npm@latest -g
 
 ##### Project ini masih mengalami bug terkait feature yang belum terselesaikan
 
