@@ -1,9 +1,8 @@
 # BLANJA - API
-<<<<<<< HEAD
-=======
+=========================
 
 ### Tentang Project ini
-Project ini dibuat untuk proses latihan dalam menerapkan framework expressJS dan postman untuk melakukan testing.
+Project ini dibuat untuk proses latihan dalam menerapkan expressJS dan postman untuk melakukan testing.
 
 #### Projek ini dibangun dengan teknologi
 - [Express JS](https://expressjs.com/en/starter/hello-world.html)
@@ -16,11 +15,13 @@ Project ini dibuat untuk proses latihan dalam menerapkan framework expressJS dan
 - /products
 - /product/{id}
 - /search
-    -/search?name
-    -/search/category
+- /search?name
+- /search/category
+- /transaction
 
 ##### POST
 - /product/{id}
+- /transaction
 
 ##### PUT
 - /product/{id}
@@ -28,5 +29,9 @@ Project ini dibuat untuk proses latihan dalam menerapkan framework expressJS dan
 ##### Delete
 - /product/{id}
 
+#### Syarat Menjalankan Program 
+- [NPM](https://www.npmjs.com/)
+    npm install npm@latest -g
+
 ##### Project ini masih mengalami bug terkait feature yang belum terselesaikan
->>>>>>> f1bc63c629bd3275af926d3ba8d0770a5078d172
+
