@@ -29,7 +29,7 @@ module.exports = {
         productModels.putProduct(updateBody,id) 
         .then((data) => {
             const resObj = {
-                msg: "Data dengan id: " + id + "Berhasil diubah",
+                msg: "Data dengan id: " + id + " Berhasil diubah",
                 data:{id: data.updateId,
                     ...updateBody}
             };

@@ -39,10 +39,18 @@ Panduan untuk menjalankan di local
 #### How to Install
 
 - Clone Repository
-    > git clone https://github.com/abdipriyangga/blanja-api.git
+    > git clone `https://github.com/abdipriyangga/blanja-api.git`
 
 - Install Express JS, MySql, and Morgan with Npm
     > npm i express mysql morgan
+and you will get a folder > node_modules
+
+- MySQL Configuration
+create your database in phpMyAdmin and setting configuration > /src/configs/myDB.js
+
+#### Usage 
+> node index.js <Or> nodemon <Or> npm start
+And run this with `localhost:3000` to view in the browser
 
 ##### Project ini masih mengalami bug terkait feature yang belum terselesaikan
 
