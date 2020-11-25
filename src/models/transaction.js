@@ -16,7 +16,7 @@ module.exports = {
     getTransactionHistory : () => {
         return new Promise ((ressolve, reject) => {
             const qs = 
-            'SELECT transactions.no_transaction, transactions.id_user, products.product_name from transactions JOIN products on transactions.id = products.id';
+            'SELECT transactions.no_transaction, transactions.id_user, products.product_name from transactions JOIN products on transactions.id = products.id ORDER BY created_time DESC';
             conn.query(qs, (err, data) => {
                 if(!err){
                     ressolve(data);

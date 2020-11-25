@@ -33,5 +33,16 @@ Project ini dibuat untuk proses latihan dalam menerapkan expressJS dan postman u
 - [NPM](https://www.npmjs.com/)
     > npm install npm@latest -g
 
+### Getting Started
+Panduan untuk menjalankan di local
+
+#### How to Install
+
+- Clone Repository
+    > git clone https://github.com/abdipriyangga/blanja-api.git
+
+- Install Express JS, MySql, and Morgan with Npm
+    > npm i express mysql morgan
+
 ##### Project ini masih mengalami bug terkait feature yang belum terselesaikan
 

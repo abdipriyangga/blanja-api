@@ -6,7 +6,7 @@ module.exports = {
         .then((data) => {
             if(data.length) {
                 const resObj = {
-                    msg: "Data ",
+                    msg: "Data Product id : " + id,
                     data: data
                 };
                 res.json(resObj);
@@ -29,8 +29,9 @@ module.exports = {
         productModels.putProduct(updateBody,id) 
         .then((data) => {
             const resObj = {
-                msg: "Data Berhasil diubah",
-                data:{id: data.updateId,...updateBody}
+                msg: "Data dengan id: " + id + "Berhasil diubah",
+                data:{id: data.updateId,
+                    ...updateBody}
             };
             res.json(resObj);
         })
@@ -44,7 +45,7 @@ module.exports = {
         productModels.deleteProduct(id) 
         .then((data) => {
             const resObj = {
-                msg: "Data Berhasil dihapus",
+                msg: "Data dengan id: " + id + "Berhasil dihapus",
                 data: {id: data.id}
             };
             res.json(resObj);

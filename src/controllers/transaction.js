@@ -11,7 +11,7 @@ module.exports = {
         transactionModels.transactionPost(insertBody) 
         .then((data) => {
             const resObj = {
-                msg: "Data Berhasil ditambah",
+                msg: "Data Transaksi",
                 data:{id: data.insertId,
                     ...insertBody}
             };

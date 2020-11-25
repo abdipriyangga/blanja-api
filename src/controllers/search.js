@@ -6,7 +6,11 @@ module.exports = {
         const key = "%" + name + "%";
         searchModel
         .searchProduct(key).then((data) => {
-          res.json(data);
+            const resObj = {
+                msg: "Data search Product by name",
+                data: data
+            };
+            res.json(resObj);
         }).catch((err) => {
             res.json(err);
         })

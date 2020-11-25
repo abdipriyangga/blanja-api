@@ -1,10 +1,15 @@
 const productsModels = require('../models/products');
+
 module.exports = {
     getAllProducts: (_, res) => { 
         productsModels.
         getAllProducts()
             .then((data) => {
-                res.json(data);
+                const resObj = {
+                    msg: "Data Product",
+                    data: data
+                };
+                res.json(resObj);
             })
             .catch((err) => {
                 res.json(err);
