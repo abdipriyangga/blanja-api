@@ -24,6 +24,15 @@ module.exports = {
         }).catch((err) => {
             res.json(err);
         })
+    },
+    searchProductNew: (req, res) => {
+        const {q} = req.query;
+        searchModel
+        .searchProductNew(q).then((data) => {
+            res.json(data);
+        }).catch((err) => {
+            res.json(err);
+        })
     }   
 }
    

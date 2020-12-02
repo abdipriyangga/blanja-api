@@ -12,4 +12,6 @@ productRouter.put("/:id", productController.putProduct);
 //Delete product
 productRouter.delete("/:id", productController.deleteProduct);
 
+productRouter.get("/news", productController.getProductNews);
+
 module.exports = productRouter;

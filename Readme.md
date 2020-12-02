@@ -1,5 +1,5 @@
 # BLANJA - API
-=========================
+========================================================================
 
 ### Tentang Project ini
 Project ini dibuat untuk proses latihan dalam menerapkan expressJS dan postman untuk melakukan testing.
@@ -49,8 +49,8 @@ and you will get a folder > node_modules
 create your database in phpMyAdmin and setting configuration `/src/configs/myDB.js`
 
 #### Usage 
-`node index.js` Or `nodemon` Or `npm start`
+`node index.js` or `nodemon` or `npm start`
 And run this with `localhost:3000` to view in the browser
 
-##### Project ini masih mengalami bug terkait feature yang belum terselesaikan
+`##### Project ini masih mengalami bug terkait feature yang belum terselesaikan`
 

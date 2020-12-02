@@ -53,5 +53,14 @@ module.exports = {
         .catch((err) => {
             res.json(err);
         })
+    },
+    getProductNews: (_, res) => {
+        productModels
+        .getProductNews()
+        .then((data) => {
+            res.json(data);
+        }).catch((err) => {
+            res.json(err);
+        })
     }
 }

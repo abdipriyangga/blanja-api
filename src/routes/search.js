@@ -9,4 +9,5 @@ searchRouter.get("/", searchController.searchProduct);
 //Search product by category
 searchRouter.get("/category", searchController.searchProductByCategory);
 
+searchRouter.get("/new", searchController.searchProductNew);
 module.exports = searchRouter;
