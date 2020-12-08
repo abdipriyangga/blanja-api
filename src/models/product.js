@@ -13,10 +13,10 @@ module.exports = {
             });
         });
     },
-    putProduct : (updateBody,id) => {
+    putProduct : (updateBody,idBody) => {
         return new Promise((resolve, reject) => {
             const qs = "UPDATE products SET ? WHERE ?";
-            conn.query(qs,[updateBody, id], (err, data) => {
+            conn.query(qs,[updateBody, idBody], (err, data) => {
                 if(!err) {
                     resolve(data);
                 }else{

@@ -11,5 +11,7 @@ productsRouter.post("/", productController.postProduct);
 
 //PUT
 //productsRouter.put("/", productController.putProduct);
+//ProductNews
+productsRouter.get("/new", productController.getAllProductsNews);
 
 module.exports = productsRouter;

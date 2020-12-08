@@ -25,10 +25,17 @@ module.exports = {
             res.json(err);
         })
     },
-    searchProductNew: (req, res) => {
-        const {q} = req.query;
+    searchProductNew: (_, res) => {
         searchModel
-        .searchProductNew(q).then((data) => {
+        .searchProductNew().then((data) => {
+            res.json(data);
+        }).catch((err) => {
+            res.json(err);
+        })
+    },
+    searchProductPopular: (_, res) => {
+        searchModel
+        .searchProductPopular().then((data) => {
             res.json(data);
         }).catch((err) => {
             res.json(err);

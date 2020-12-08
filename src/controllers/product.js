@@ -20,13 +20,14 @@ module.exports = {
         })
     },
     putProduct: (req,res) => {
-        const {id} = req.params;
+        const {id} = req.body;
         const {body} = req;
         const updateBody = {
             ...body,
             updated_time: new Date(Date.now())
         };
-        productModels.putProduct(updateBody,id) 
+        const idBody = { id };
+        productModels.putProduct(updateBody,idBody) 
         .then((data) => {
             const resObj = {
                 msg: "Data dengan id: " + id + " Berhasil diubah",

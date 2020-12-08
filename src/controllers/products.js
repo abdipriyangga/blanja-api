@@ -34,5 +34,19 @@ module.exports = {
         .catch((err) => {
             res.json(err);
         })
-    }  
+    },
+    getAllProductsNews: (_, res) => { 
+        productsModels.
+        getAllProductsNews()
+            .then((data) => {
+                const resObj = {
+                    msg: "Data Product News",
+                    data: data
+                };
+                res.json(resObj);
+            })
+            .catch((err) => {
+                res.json(err);
+            })
+    },
 }

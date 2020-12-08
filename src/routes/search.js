@@ -10,4 +10,5 @@ searchRouter.get("/", searchController.searchProduct);
 searchRouter.get("/category", searchController.searchProductByCategory);
 
 searchRouter.get("/new", searchController.searchProductNew);
+searchRouter.get("/popular", searchController.searchProductPopular);
 module.exports = searchRouter;

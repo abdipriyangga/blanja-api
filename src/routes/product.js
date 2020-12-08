@@ -7,7 +7,7 @@ const productController = require("../controllers/product");
 productRouter.get("/:id", productController.getProductById);
 
 // UPDATE a product
-productRouter.put("/:id", productController.putProduct);
+productRouter.patch("/", productController.putProduct);
 
 //Delete product
 productRouter.delete("/:id", productController.deleteProduct);
