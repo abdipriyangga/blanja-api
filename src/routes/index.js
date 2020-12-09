@@ -7,11 +7,12 @@ const productsRouter = require("./products");
 const productRouter = require("./product");
 const searchRouter = require("./search");
 const transactionRouter = require("./transaction");
-const authRouter = require("./auth")
+const authRouter = require("./auth");
+const middleware = require("../helpers/middlewares/checkToken");
 
 mainRouter.use("/", welcomeRouter);
 mainRouter.use("/products", productsRouter);
-mainRouter.use("/product", productRouter);
+mainRouter.use("/product",middleware, productRouter);
 mainRouter.use("/search", searchRouter);
 mainRouter.use("/transaction", transactionRouter);
 mainRouter.use("/auth", authRouter);

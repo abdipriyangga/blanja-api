@@ -2,6 +2,13 @@ const productModels = require("../models/product");
 module.exports = {
     getProductById: (req, res) => {
         const {id} = req.params;
+        console.log(req.decodedToken);
+        const level = req.decodedToken.level;
+        if(level > 1) {
+            res.status(401).json({
+                msg: "You don't have authorizathion to access this data!"
+            });
+        }
         productModels.getProductById(id)
         .then((data) => {
             if(data.length) {

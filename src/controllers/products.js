@@ -7,6 +7,7 @@ module.exports = {
         const limit = Number(query.limit) || 1;
         const offset = (Number(query.page) - 1) * limit || 0;  
         const page = Number(query.page) || 1;
+
         productsModels.
         getAllProducts(limit, offset)
             .then((data) => {
@@ -18,7 +19,7 @@ module.exports = {
                             currentPage: page,
                             previousPage:
                                 page === 1 ? null : `/?page=${page-1}&limit=${limit}`,
-                            nextPage: `/?page=${page+1}&limit=${limit}`
+                            nextPage: `/?page=${page+1}&limit=${limit}`,
                             }
                     })
                 } else {

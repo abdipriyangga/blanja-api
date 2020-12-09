@@ -38,7 +38,7 @@ module.exports = {
     },
     postLogin : (body) => {
         return new Promise((resolve, reject) => {
-            const qs = "Select password From users Where email=?";
+            const qs = "Select password, id_level From users Where email=?";
             const {email, password} = body;
             db.query(qs, email, (err, data) => {
                 if(err) {
@@ -76,6 +76,7 @@ module.exports = {
                         else {
                             const payload = {
                                 email,
+                                level: data[0].id_level
                             };
                             const sk = process.env.SECRET_KEY;
                             const token = jwt.sign(payload, sk);
