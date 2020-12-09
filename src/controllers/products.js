@@ -35,12 +35,16 @@ module.exports = {
     },
     postProduct: (req,res) => {
         const {body} = req;
+        const uploadMultipleImg = JSON.stringify(
+            req.files.map((e) => "/images" + "/" + e.filename + " ")
+        )
         const insertBody = {
             ...body,
+            images: uploadMultipleImg,
             created_time: new Date(Date.now()),
             updated_time: new Date(Date.now())
         };
-        productsModels.postProduct(insertBody) 
+        productsModels.postProduct(insertBody, uploadMultipleImg) 
         .then((data) => {
             const resObj = {
                 msg: "Data Berhasil ditambah",

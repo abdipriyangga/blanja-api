@@ -11,6 +11,8 @@ app.listen(port, () => {
   })
 
 
+app.use(express.static("public"));
+
 app.use(cors());
 // add logger with morgan
 app.use(logger("dev"));

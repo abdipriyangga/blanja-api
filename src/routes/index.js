@@ -8,14 +8,16 @@ const productRouter = require("./product");
 const searchRouter = require("./search");
 const transactionRouter = require("./transaction");
 const authRouter = require("./auth");
-const middleware = require("../helpers/middlewares/checkToken");
+const middlewareCheckToken = require("../helpers/middlewares/checkToken");
+const uploadRouter = require("./imgUpload");
 
 mainRouter.use("/", welcomeRouter);
 mainRouter.use("/products", productsRouter);
-mainRouter.use("/product",middleware, productRouter);
+mainRouter.use("/product",middlewareCheckToken, productRouter);
 mainRouter.use("/search", searchRouter);
 mainRouter.use("/transaction", transactionRouter);
 mainRouter.use("/auth", authRouter);
+mainRouter.use("/upload", uploadRouter);
 
 module.exports = mainRouter;
 
