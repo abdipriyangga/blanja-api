@@ -1,18 +1,35 @@
 const productsModels = require('../models/products');
+const form = require("../helpers/form");
 
 module.exports = {
-    getAllProducts: (_, res) => { 
+    getAllProducts: (req, res) => { 
+        const {query} = req;
+        const limit = Number(query.limit) || 1;
+        const offset = (Number(query.page) - 1) * limit || 0;  
+        const page = Number(query.page) || 1;
         productsModels.
-        getAllProducts()
+        getAllProducts(limit, offset)
             .then((data) => {
-                const resObj = {
-                    msg: "Data Product",
-                    data: data
-                };
-                res.json(resObj);
+                if(data != 0) {
+                    form.success(res, {
+                        msg: "Data Product",
+                        products: data,
+                        pageInfo: {
+                            currentPage: page,
+                            previousPage:
+                                page === 1 ? null : `/?page=${page-1}&limit=${limit}`,
+                            nextPage: `/?page=${page+1}&limit=${limit}`
+                            }
+                    })
+                } else {
+                    form.error(res,{
+                        msg: "Data Not Found",
+                        products: data
+                    });
+                } 
             })
             .catch((err) => {
-                res.json(err);
+                res.status(500).json(err)
             })
     },
     postProduct: (req,res) => {

@@ -1,6 +1,7 @@
 const db = require("../configs/myDB");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+//const blackList = require('jwt-blacklist')(jwt); 
 const saltRounds = 10;
 
 
@@ -8,7 +9,6 @@ module.exports = {
 
     postNewUser : (body) => {
         return new Promise ((resolve, reject) => {
-            const {email} = body;
                 bcrypt.genSalt(saltRounds, (err,salt) => {
                     if(err) {
                         reject(err);
@@ -89,5 +89,14 @@ module.exports = {
                 
             })
         })
-    }
+    },
+    // postLogout: (body) => {
+    //     const {email} = body;
+    //     const payload = {
+    //         email,
+
+    //     };
+    //     const sk = process.env.SECRET_KEY;
+    //     const token = jwt.sign(payload, sk, {expiresIn: '1m'})
+    // }
 }
