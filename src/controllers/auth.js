@@ -5,12 +5,14 @@ module.exports = {
     register: (req,res) => {
         const { body } = req;
         authModel.postNewUser(body).then((data) => {
-            form.success(res,{
-                msg: "Register berhaasil",
-                userData: {
-                    email : body.email
-                }
-            });
+                form.success(res,{
+                    msg: "Register berhaasil",
+                    userData: {
+                        email : body.email
+                    }
+                });
+            
+            
         }).catch((err) => {
             form.error(res,err);
         });
