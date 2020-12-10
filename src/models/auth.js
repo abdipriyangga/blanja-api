@@ -79,7 +79,7 @@ module.exports = {
                                 level: data[0].id_level
                             };
                             const sk = process.env.SECRET_KEY;
-                            const token = jwt.sign(payload, sk, {expiresIn:60});
+                            const token = jwt.sign(payload, sk, {expiresIn:120});
                             resolve({
                                 msg: "Login Berhasil",
                                 loginToken: token

@@ -34,11 +34,15 @@ module.exports = {
             updated_time: new Date(Date.now())
         };
         const idBody = { id };
+        const uploadMultipleImg = JSON.stringify(
+            req.files.map((e) => "/images" + "/" + e.filename + " ")
+        )
         productModels.putProduct(updateBody,idBody) 
         .then((data) => {
             const resObj = {
-                msg: "Data dengan id: " + id + " Berhasil diubah",
+                msg: "Data id: " + id + " has changed",
                 data:{id: data.updateId,
+                    images: uploadMultipleImg,
                     ...updateBody}
             };
             res.json(resObj);
@@ -53,7 +57,7 @@ module.exports = {
         productModels.deleteProduct(id) 
         .then((data) => {
             const resObj = {
-                msg: "Data dengan id: " + id + "Berhasil dihapus",
+                msg: "Data dengan id: " + id + " Berhasil dihapus",
                 data: {id: data.id}
             };
             res.json(resObj);
