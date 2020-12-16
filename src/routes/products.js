@@ -8,7 +8,7 @@ productsRouter.get("/", productController.getAllProducts);
 //productsRouter.get("/:id", productController.getProductsById);
 
 // POST
-productsRouter.post("/", middlewareCheckToken, multiUpload ,productController.postProduct);
+productsRouter.post("/", middlewareCheckToken.login, middlewareCheckToken.seller, multiUpload ,productController.postProduct);
 
 //PUT
 //productsRouter.put("/", productController.putProduct);

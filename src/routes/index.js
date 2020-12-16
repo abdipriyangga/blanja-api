@@ -13,7 +13,7 @@ const uploadRouter = require("./imgUpload");
 
 mainRouter.use("/", welcomeRouter);
 mainRouter.use("/products", productsRouter);
-mainRouter.use("/product",middlewareCheckToken, productRouter);
+mainRouter.use("/product",middlewareCheckToken.login, middlewareCheckToken.seller, productRouter);
 mainRouter.use("/search", searchRouter);
 mainRouter.use("/transaction", transactionRouter);
 mainRouter.use("/auth", authRouter);

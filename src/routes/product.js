@@ -7,10 +7,10 @@ const middlewareCheckToken = require("../helpers/middlewares/checkToken");
 productRouter.get("/:id", productController.getProductById);
 
 // UPDATE a product
-productRouter.patch("/", middlewareCheckToken, multiUpload ,productController.putProduct);
+productRouter.patch("/", middlewareCheckToken.login, multiUpload ,productController.putProduct);
 
 //Delete product
-productRouter.delete("/:id", middlewareCheckToken, productController.deleteProduct);
+productRouter.delete("/:id", middlewareCheckToken.login, productController.deleteProduct);
 
 productRouter.get("/news", productController.getProductNews);
 
